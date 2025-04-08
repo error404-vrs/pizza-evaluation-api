@@ -17,6 +17,8 @@ const $removeIcon = document.querySelector(".basket-product-remove-icon");
 //         console.log(res.json())
 //     })
 
+
+
 const orders = {
   "products": [
 
