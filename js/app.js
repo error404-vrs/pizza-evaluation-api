@@ -25,7 +25,8 @@ const orders = {
   ]
 }
 
-fetch("http://10.59.122.41:3000/products")
+
+fetch("http://10.59.122.150:3000/products")
   .then(function (res) {
     return res.json();
   })
@@ -88,9 +89,53 @@ fetch("http://10.59.122.41:3000/products")
         const $totalPrice = document.createElement("span");
         const $removeIcon = document.createElement("img");
         // const $separator = document.createElement("hr")
-        const $removeItemCard = document.createElement("p")
-        const $quantityOnCard = document.querySelector("p")
-        const $addItemCard = document.createElement("p")
+        const $removeItemCard = document.createElement("button")
+        const $quantityOnCard = document.querySelector("span")
+        const $addItemCard = document.createElement("button")
+
+        $removeItemCard.textContent = "-"
+        $addItemCard.textContent = "+"
+
+        if($productItems in $basketProduct ) {
+          console.log($productItems)
+
+        }
+
+
+        $pizzaItem.classList.add("piza-item-after")
+
+
+        $addItemCard.classList.add("item-card")
+        $removeItemCard.classList.add("item-card")
+
+        $cardButton.textContent = ""
+        $cardButton.appendChild($removeItemCard)
+        // $cardButton.appendChild($quantityOnCard)
+        $cardButton.appendChild($addItemCard)
+
+        $cardButton.addEventListener("click", function() {
+          console.log("toto")
+        })
+
+        $removeItemCard.addEventListener("click", function() {
+          $productItems.remove($productItems)
+          $productItems.remove($productItems)
+        })
+
+        $addItemCard.addEventListener("click", function() {
+          $productItems.remove($productItems)
+          $basketProduct.appendChild($productItems);
+          $productItems.appendChild($itemName);
+          $productItems.appendChild($itemDetails);
+          $itemDetails.appendChild($quantity);
+          $itemDetails.appendChild($unitPrice);
+          $itemDetails.appendChild($totalPrice);
+          $productItems.appendChild($removeIcon);
+        })
+
+
+
+
 
         console.log($itemName);
 
@@ -98,6 +143,11 @@ fetch("http://10.59.122.41:3000/products")
         $unitPrice.textContent = "@" + element.price;
         $removeIcon.src = "../images/remove-icon.svg";
         $totalPrice.textContent = "' " + element.price + " '";
+
+
+        // $addItemCard.textContent = "+"
+        // $removeItemCard.textContent = "-"
+        // $cardButton.textContent = "0"
 
         $basketProduct.appendChild($productItems);
         $productItems.appendChild($itemName);
@@ -107,6 +157,13 @@ fetch("http://10.59.122.41:3000/products")
         $itemDetails.appendChild($totalPrice);
         $productItems.appendChild($removeIcon);
         // $basketProduct.appendChild($separator)
+        // $pizzaItem.addEventListener("click", function() {
+        // })
+        // $cardButton.textContent = "coucou"
+
+        // $cardButton.appendChild($addItemCard)
+        // $cardButton.appendChild($quantityOnCard)
+        // $cardButton.appendChild($removeItemCard)
 
         $productItems.classList.add("basket-product-item");
         $itemName.classList.add("basket-product-item-name");
@@ -126,4 +183,4 @@ fetch("http://10.59.122.41:3000/products")
         });
       });
     });
-  });
+  })
