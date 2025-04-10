@@ -3,6 +3,24 @@ const $pizzaWrapper = document.querySelector(".pizzas-wrapper");
 // const $firstSection = document.querySelector("first-section");
 const $pizzaBasket = document.querySelector(".basket-aside");
 const $removeIcon = document.querySelector(".basket-product-remove-icon");
+const $confirmButton = document.querySelector(".confirm-order-btn")
+
+// CONFIGURATION DU BOUTON DE CPNFIRMATION DE COMMANDE (au debut exeptionnelment)
+
+$confirmButton.addEventListener("click", function() {
+  const $confirmedPage = document.querySelector(".confirmed-section")
+  const $confirmedImage = document.createElement("img")
+  const $confirmedTitle = document.createElement("h1")
+  const $confirmedPageParapgraph = document.creat
+  const $confirmedProductList = document.createElement("ul")
+  const $confirmConfirmedButton = document.createElement("a")
+
+  $confirmedImage.src = "../images/carbon_checkmark-outline.svg"
+  $confirmedTitle.textContent = "Order Confirmed"
+
+  $confirmedPage.appendChild($confirmedImage)
+  $confirmedPage.appendChild($confirmedTitle)
+})
 
 // async function showPizzas() {
 //     const reponse = await fetch("10.59.122.41:3000/products");
