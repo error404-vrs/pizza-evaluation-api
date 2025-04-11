@@ -40,7 +40,7 @@
         "name": "The Hawaiian Pizza",
         "description": "A blend of our special pizza & BBQ sauces, topped with Australian bacon, and pineapple.",
         "price": 17,
-        "   ": "https://cdn.dummyjson.com/recipe-images/1.webp",
+        "image": "https://cdn.dummyjson.com/recipe-images/1.webp",
         "category": {
             "id": "c8755d47-4595-4768-9b0a-4cdc2fa92dd9",
             "name": "pizza",
