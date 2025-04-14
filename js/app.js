@@ -40,9 +40,21 @@ const orders = {
 };
 
 async function getProducts() {
-  const res = await fetch("http://10.59.122.27:3000/products");
-  const data = await res.json();
 
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  headers: {
+    "ngrok-skip-browser-warning": "1",
+    "Content-Type": "application/json",
+  },
+  
+  const requestOptions = {
+    method: "GET",
+    headers: myHeaders
+  };
+  
+  const res = await fetch("https://prime-garfish-currently.ngrok-free.app/products", requestOptions);
+  const data = await res.json();
   return data;
 }
 
