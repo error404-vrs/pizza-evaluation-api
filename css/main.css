@@ -13,6 +13,75 @@
   --red-hat-ff: "Red Hat Text", sans-serif;
 }
 
+.confirmed-section {
+  display: none; 
+  text-align: center;
+  padding: 30px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 80%;
+  max-width: 400px;
+  transition: opacity 0.5s ease;
+  color: #333;
+}
+
+.confirmed-section .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.confirmed-section img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.confirmed-section h1 {
+  font-size: 2rem;
+  color: #4caf50;
+  font-family: 'Arial', sans-serif;
+  margin-top: 10px;
+}
+
+.pizza-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.pizza-list li {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.show-confirmed {
+  display: block;
+  opacity: 1;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
 body {
   background-color: var(--fantasy);
   padding-bottom: 24px;
